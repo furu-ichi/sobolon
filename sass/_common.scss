@@ -1,0 +1,54 @@
+@use "breakpoints";
+@use "color";
+
+/* PC、SP非表示用 */
+.hidden-pc {
+  display: none;
+}
+.hidden-sp {
+  @include breakpoints.mq("sp") {
+    display: none;
+  }
+}
+
+/* セクション間のpadding */
+.inter-section {
+  padding-bottom: 160px;
+
+  @include breakpoints.mq("sp") {
+    padding-bottom: 96px;
+  }
+}
+
+/* 共通インナー */
+.inner {
+  padding-right: 40px;
+  padding-left: 40px;
+
+  @include breakpoints.mq("sp") {
+    padding-right: 15px;
+    padding-left: 15px;
+  }
+}
+
+/* 見出し */
+.heading {
+  position: relative;
+  padding-bottom: 24px; // 疑似要素分のスペースを空ける
+  font-size: 40px;
+  font-weight: 600;
+  line-height: 1;
+  text-align: center;
+
+  // 見出し下の下線
+  &::after {
+    content: "";
+    position: absolute;
+    background-color: color.$color-line-blue;
+    width: 60px;
+    height: 1px;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 0;
+  }
+}

@@ -1,0 +1,218 @@
+@use "breakpoints";
+@use "color";
+@use "common";
+
+//////////
+/* 全体 */
+//////////
+body {
+  background-color: color.$color-bg-main;
+  color: color.$color-font-black;
+  font-family: "Noto Serif JP", sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 1.7;
+}
+
+/////////////
+/* ヘッダー */
+/////////////
+.header {
+  padding-top: 22px;
+  padding-bottom: 21px;
+
+  @include breakpoints.mq("sp") {
+    padding-top: 19px;
+    padding-bottom: 19px;
+  }
+}
+
+.header__inner {
+}
+
+.header__content {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header__logo {
+  a {
+    display: block;
+    img {
+      display: block;
+      width: 120px;
+      height: 22px;
+    }
+  }
+}
+
+.header__nav-list {
+  display: flex;
+  flex-direction: row;
+  gap: 46px;
+
+  @include breakpoints.mq("sp") {
+    display: none;
+  }
+}
+
+.header__nav {
+}
+
+// ハンバーガーアイコン
+.header__icon {
+  display: none;
+
+  @include breakpoints.mq("sp") {
+    position: relative;
+    display: block;
+    width: 30px;
+    height: 18px;
+  }
+}
+
+// ハンバーガーアイコンの線1本分
+.header__icon-bar {
+  position: absolute;
+  right: 0;
+  // 線のサイズ、色
+  width: 30px;
+  height: 2px;
+  background-color: color.$color-line-blue;
+
+  // 上の線
+  &:nth-child(1) {
+    top: 0;
+  }
+
+  // 真ん中の線
+  &:nth-child(2) {
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  // 下の線
+  &:nth-child(3) {
+    bottom: 0;
+  }
+}
+
+/////////////////////
+/* ファーストビュー */
+/////////////////////
+.fv {
+}
+
+.fv__inner {
+}
+
+.fv__content {
+  position: relative;
+}
+
+.fv__image {
+  // ファーストビュー画像は右寄せ
+  display: block;
+  text-align: right;
+
+  @include breakpoints.mq("sp") {
+    text-align: center;
+  }
+
+  img {
+    width: 990px;
+
+    @include breakpoints.mq("sp") {
+      width: 345px;
+    }
+  }
+}
+
+.fv__texts {
+  // ファーストビューテキストは絶対配置で画像に重ねて表示
+  position: absolute;
+  left: 0;
+  padding-top: 80px;
+  padding-right: 40px;
+  padding-bottom: 80px;
+  background-color: color.$color-bg-white;
+
+  // 上下中央表示
+  top: 50%;
+  transform: translateY(-50%);
+
+  @include breakpoints.mq("sp") {
+    // 画像とテキストを縦並びにする
+    position: relative;
+    transform: translateY(0);
+    padding: 0;
+    margin-top: 30px;
+  }
+}
+
+.fv__text-1 {
+  font-size: 26px;
+  font-weight: 600;
+}
+
+.fv__text-2 {
+  margin-top: 16px;
+}
+
+/////////////
+/* Concept */
+/////////////
+.concept {
+}
+
+.concept__inner {
+}
+.concept__heading {
+}
+
+.concept__content {
+  // PCの場合は横並び表示
+  display: flex;
+  flex-direction: row;
+  gap: 80px;
+  margin-top: 64px;
+}
+
+.concept__image {
+  width: calc(600 / 1200 * 100%);
+  img {
+  }
+}
+
+.concept__texts {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  justify-content: center;
+  width: calc(520 / 1200 * 100%);
+}
+
+.concept__text-1 {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.concept__text-2 {
+}
+
+/* Feature */
+
+/* Question */
+
+/* Products */
+
+/* News */
+
+/* Motto */
+
+/* Contact */
+
+/* フッター */

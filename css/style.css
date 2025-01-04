@@ -1,0 +1,246 @@
+@charset "UTF-8";
+/* PC、SP非表示用 */
+.hidden-pc {
+  display: none;
+}
+
+@media not screen and (min-width: 768px) {
+  .hidden-sp {
+    display: none;
+  }
+}
+
+/* セクション間のpadding */
+.inter-section {
+  padding-bottom: 160px;
+}
+@media not screen and (min-width: 768px) {
+  .inter-section {
+    padding-bottom: 96px;
+  }
+}
+
+/* 共通インナー */
+.inner {
+  padding-right: 40px;
+  padding-left: 40px;
+}
+@media not screen and (min-width: 768px) {
+  .inner {
+    padding-right: 15px;
+    padding-left: 15px;
+  }
+}
+
+/* 見出し */
+.heading {
+  position: relative;
+  padding-bottom: 24px;
+  font-size: 40px;
+  font-weight: 600;
+  line-height: 1;
+  text-align: center;
+}
+.heading::after {
+  content: "";
+  position: absolute;
+  background-color: var(--3-ea-1-d-1, #3ea1d1);
+  width: 60px;
+  height: 1px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  bottom: 0;
+}
+
+/* 全体 */
+body {
+  background-color: var(--ffffff, #fff);
+  color: var(--333333, #333);
+  font-family: "Noto Serif JP", sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 1.7;
+}
+
+/* ヘッダー */
+.header {
+  padding-top: 22px;
+  padding-bottom: 21px;
+}
+@media not screen and (min-width: 768px) {
+  .header {
+    padding-top: 19px;
+    padding-bottom: 19px;
+  }
+}
+
+.header__content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.header__logo a {
+  display: block;
+}
+.header__logo a img {
+  display: block;
+  width: 120px;
+  height: 22px;
+}
+
+.header__nav-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  gap: 46px;
+}
+@media not screen and (min-width: 768px) {
+  .header__nav-list {
+    display: none;
+  }
+}
+
+.header__icon {
+  display: none;
+}
+@media not screen and (min-width: 768px) {
+  .header__icon {
+    position: relative;
+    display: block;
+    width: 30px;
+    height: 18px;
+  }
+}
+
+.header__icon-bar {
+  position: absolute;
+  right: 0;
+  width: 30px;
+  height: 2px;
+  background-color: var(--3-ea-1-d-1, #3ea1d1);
+}
+.header__icon-bar:nth-child(1) {
+  top: 0;
+}
+.header__icon-bar:nth-child(2) {
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+.header__icon-bar:nth-child(3) {
+  bottom: 0;
+}
+
+/* ファーストビュー */
+.fv__content {
+  position: relative;
+}
+
+.fv__image {
+  display: block;
+  text-align: right;
+}
+@media not screen and (min-width: 768px) {
+  .fv__image {
+    text-align: center;
+  }
+}
+.fv__image img {
+  width: 990px;
+}
+@media not screen and (min-width: 768px) {
+  .fv__image img {
+    width: 345px;
+  }
+}
+
+.fv__texts {
+  position: absolute;
+  left: 0;
+  padding-top: 80px;
+  padding-right: 40px;
+  padding-bottom: 80px;
+  background-color: #fff;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+@media not screen and (min-width: 768px) {
+  .fv__texts {
+    position: relative;
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    padding: 0;
+    margin-top: 30px;
+  }
+}
+
+.fv__text-1 {
+  font-size: 26px;
+  font-weight: 600;
+}
+
+.fv__text-2 {
+  margin-top: 16px;
+}
+
+/* Concept */
+.concept__content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  gap: 80px;
+  margin-top: 64px;
+}
+
+.concept__image {
+  width: 50%;
+}
+.concept__texts {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 40px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 43.3333333333%;
+}
+
+.concept__text-1 {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+/* Feature */
+/* Question */
+/* Products */
+/* News */
+/* Motto */
+/* Contact */
+/* フッター */
