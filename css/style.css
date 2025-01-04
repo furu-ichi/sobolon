@@ -4,7 +4,7 @@
   display: none;
 }
 
-@media not screen and (min-width: 768px) {
+@media screen and not (min-width: 768px) {
   .hidden-sp {
     display: none;
   }
@@ -14,7 +14,7 @@
 .inter-section {
   padding-bottom: 160px;
 }
-@media not screen and (min-width: 768px) {
+@media screen and not (min-width: 768px) {
   .inter-section {
     padding-bottom: 96px;
   }
@@ -25,7 +25,7 @@
   padding-right: 40px;
   padding-left: 40px;
 }
-@media not screen and (min-width: 768px) {
+@media screen and not (min-width: 768px) {
   .inner {
     padding-right: 15px;
     padding-left: 15px;
@@ -69,7 +69,7 @@ body {
   padding-top: 22px;
   padding-bottom: 21px;
 }
-@media not screen and (min-width: 768px) {
+@media screen and not (min-width: 768px) {
   .header {
     padding-top: 19px;
     padding-bottom: 19px;
@@ -111,7 +111,7 @@ body {
           flex-direction: row;
   gap: 46px;
 }
-@media not screen and (min-width: 768px) {
+@media screen and not (min-width: 768px) {
   .header__nav-list {
     display: none;
   }
@@ -120,7 +120,7 @@ body {
 .header__icon {
   display: none;
 }
-@media not screen and (min-width: 768px) {
+@media screen and not (min-width: 768px) {
   .header__icon {
     position: relative;
     display: block;
@@ -157,7 +157,7 @@ body {
   display: block;
   text-align: right;
 }
-@media not screen and (min-width: 768px) {
+@media screen and not (min-width: 768px) {
   .fv__image {
     text-align: center;
   }
@@ -165,7 +165,7 @@ body {
 .fv__image img {
   width: 990px;
 }
-@media not screen and (min-width: 768px) {
+@media screen and not (min-width: 768px) {
   .fv__image img {
     width: 345px;
   }
@@ -182,13 +182,18 @@ body {
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
 }
-@media not screen and (min-width: 768px) {
+@media screen and not (min-width: 768px) {
   .fv__texts {
     position: relative;
     -webkit-transform: translateY(0);
             transform: translateY(0);
     padding: 0;
     margin-top: 30px;
+  }
+}
+@media screen and (min-width: 376px) and (max-width: 767px) {
+  .fv__texts {
+    text-align: center;
   }
 }
 

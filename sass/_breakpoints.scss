@@ -1,11 +1,15 @@
 @use "sass:map";
 
-$breakpoint-px: 768px;
+$breakpoint-1: 768px;
+$breakpoint-2: 375px;
 $breakpoints: (
   // 対象ピクセル数未満
-  "sp": "not screen and (min-width: #{$breakpoint-px})",
+  "sp": "screen and not (min-width: #{$breakpoint-1})",
   // 対象ピクセル数以上
-  "pc": "screen and (min-width: #{$breakpoint-px})"
+  "pc": "screen and (min-width: #{$breakpoint-1})",
+  // 対象ピクセル数より大きく、対象ピクセル数未満（スマホとタブレットの間）
+  "sp-tab":
+    "screen and (min-width: #{$breakpoint-2 + 1px}) and (max-width: #{$breakpoint-1 - 1px})"
 );
 
 @mixin mq($breakpoint: pc) {
