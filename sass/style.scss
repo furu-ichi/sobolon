@@ -5,6 +5,7 @@
 //////////
 /* 全体 */
 //////////
+// id指定して詳細度をあげる
 body {
   background-color: color.$color-bg-main;
   color: color.$color-font-black;
@@ -19,6 +20,10 @@ body {
 /* ヘッダー */
 /////////////
 .header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background-color: color.$color-bg-header;
   padding-top: 22px;
   padding-bottom: 21px;
 
@@ -39,6 +44,12 @@ body {
 }
 
 .header__logo {
+  transition: opacity 0.3s;
+
+  &:hover {
+    opacity: 0.6;
+  }
+
   a {
     display: block;
     img {
@@ -52,7 +63,7 @@ body {
 .header__nav-list {
   display: flex;
   flex-direction: row;
-  gap: 46px;
+  gap: calc(46px + 0.5px); // ピクセルパーフェクトの為
 
   @include breakpoints.mq("sp") {
     display: none;
@@ -60,6 +71,11 @@ body {
 }
 
 .header__nav {
+  transition: color 0.3s;
+
+  &:hover {
+    color: color.$color-main;
+  }
 }
 
 // ハンバーガーアイコン
@@ -104,6 +120,11 @@ body {
 /* ファーストビュー */
 /////////////////////
 .fv {
+  padding-bottom: 80px;
+
+  @include breakpoints.mq("sp") {
+    padding-bottom: 48px;
+  }
 }
 
 .fv__inner {
@@ -111,6 +132,8 @@ body {
 
 .fv__content {
   position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .fv__image {
@@ -135,9 +158,19 @@ body {
   // ファーストビューテキストは絶対配置で画像に重ねて表示
   position: absolute;
   left: 0;
-  padding-top: 80px;
-  padding-right: 40px;
-  padding-bottom: 80px;
+  padding-top: clamp(
+    2.5rem,
+    -1.25rem + 7.81vw,
+    5rem
+  ); // 最小40px、最大80px（画面幅768px～1280px）
+  padding-bottom: clamp(2.5rem, -1.25rem + 7.81vw, 5rem); // padding-topと同様
+
+  padding-right: clamp(
+    1.25rem,
+    -0.625rem + 3.91vw,
+    2.5rem
+  ); // 最小20px、最大40px（画面幅768px～1280px）
+
   background-color: color.$color-bg-white;
 
   // 上下中央表示
@@ -174,19 +207,40 @@ body {
 
 .concept__inner {
 }
+
 .concept__heading {
 }
 
 .concept__content {
-  // PCの場合は横並び表示
+  // PCの場合は横並び
   display: flex;
   flex-direction: row;
-  gap: 80px;
-  margin-top: 64px;
+  gap: clamp(
+    1.25rem,
+    -4.375rem + 11.72vw,
+    5rem
+  ); // 最小20px、最大80px（768px以上 1280px以下）
+  margin-top: calc(64px + 1px); // ピクセルパーフェクトの為
+
+  @include breakpoints.mq("sp") {
+    // スマホの場合は縦並び
+    flex-direction: column;
+    margin-top: 46px;
+    gap: 34px;
+  }
 }
 
 .concept__image {
+  margin: 0 auto;
   width: calc(600 / 1200 * 100%);
+  flex-shrink: 0; // 幅固定。テキスト部分を可変にする
+
+  @include breakpoints.mq("sp") {
+    // 画面幅375px以下対応の為
+    width: auto;
+    max-width: 345px;
+  }
+
   img {
   }
 }
@@ -196,27 +250,352 @@ body {
   flex-direction: column;
   gap: 40px;
   justify-content: center;
-  width: calc(520 / 1200 * 100%);
+
+  @include breakpoints.mq("sp") {
+    gap: 22px;
+  }
 }
 
 .concept__text-1 {
   font-size: 20px;
   font-weight: 600;
+
+  @include breakpoints.mq("sp-tab") {
+    text-align: center;
+  }
 }
 
 .concept__text-2 {
 }
 
+/////////////
 /* Feature */
+/////////////
+.feature {
+}
 
+.feature__inner {
+}
+
+.feature__heading {
+}
+
+.feature__cards {
+  display: flex;
+  flex-direction: row;
+  gap: clamp(
+    0.938rem,
+    -6.094rem + 14.65vw,
+    5.625rem
+  ); // 最小15px、最大90px（画面幅768px～1280px）
+  justify-content: center;
+  margin-top: 64px;
+
+  @include breakpoints.mq("sp") {
+    flex-direction: column;
+    gap: 50px;
+    align-items: center;
+    margin-top: 46px;
+  }
+}
+
+.feature__card {
+  @include breakpoints.mq("sp") {
+    width: auto;
+    max-width: 345px;
+  }
+}
+
+.feature-card {
+  box-shadow: 3px 3px 15px 0px rgba(96, 96, 96, 0.16);
+}
+
+.feature-card__image {
+  img {
+    width: 340px;
+
+    @include breakpoints.mq("sp") {
+      width: 100%;
+    }
+  }
+}
+
+.feature-card__text {
+  padding-top: 26px;
+  padding-bottom: 26px;
+  text-align: center;
+  font-weight: 600;
+}
+
+/////////////
 /* Question */
+/////////////
+.question {
+}
 
+.question__inner {
+}
+
+.question__content {
+  position: relative;
+}
+
+.question__image {
+  img {
+    filter: brightness(
+      85%
+    ); // カンプと比べて画像の上の文字が見にくい為、暗くして調整
+
+    @include breakpoints.mq("sp") {
+      // 横幅は一定。縦にはみ出した部分は見切れるようにする
+      width: 100%;
+      height: 490px;
+      object-fit: cover;
+      object-position: top;
+    }
+  }
+}
+
+.question__texts {
+  position: absolute;
+  top: clamp(
+    2.5rem,
+    -5.281rem + 16.21vw,
+    7.688rem
+  ); // 最小40px、最大123px（画面幅768px～1280px）
+  padding-right: common.$pc-inner;
+  padding-left: common.$pc-inner;
+
+  @include breakpoints.mq("sp") {
+    top: clamp(
+      8.75rem,
+      -5.795rem + 72.73vw,
+      11.25rem
+    ); // 最小140px、最大180px（画面幅320px～375px）
+    padding-right: common.$sp-inner;
+    padding-left: common.$sp-inner;
+  }
+}
+
+.question__text-1 {
+  color: color.$color-font-white;
+  font-size: 22px;
+  font-weight: 600;
+
+  @include breakpoints.mq("sp") {
+    font-size: 20px;
+  }
+}
+
+.question__text-2 {
+  margin-top: 24px;
+  color: color.$color-font-white;
+  font-weight: 600;
+
+  @include breakpoints.mq("sp") {
+    font-size: 14px;
+  }
+}
+
+/////////////
 /* Products */
+/////////////
+.products {
+}
 
+.products__inner {
+}
+
+.products__heading {
+}
+
+.products__cards {
+  display: flex;
+  flex-direction: row;
+  gap: clamp(
+    0.938rem,
+    -5.156rem + 12.7vw,
+    5rem
+  ); // 最小15px、最大80px（画面幅768px～1280px）
+  justify-content: center;
+  margin-top: 64px;
+
+  @include breakpoints.mq("sp") {
+    flex-direction: column;
+    gap: 40px;
+    align-items: center;
+    margin-top: 46px;
+  }
+}
+
+.products__card {
+}
+
+.products-card {
+  width: 260px;
+
+  @include breakpoints.mq("sp") {
+    width: 263px;
+  }
+}
+
+.products-card__image {
+  &:hover {
+    img {
+      transform: scale(1.1);
+    }
+  }
+
+  img {
+    transition: transform 0.3s;
+  }
+}
+
+.products-card__text {
+  margin-top: calc(18px + 2px); // ピクセルパーフェクトの為
+  font-size: 14px;
+
+  @include breakpoints.mq("sp") {
+    margin-top: calc(20px + 1px); // ピクセルパーフェクトの為
+  }
+}
+
+.products-card__price {
+  margin-top: 10px;
+  color: color.$color-font-gray-1;
+  font-size: 14px;
+}
+
+.products__button {
+  margin-top: 44px;
+  text-align: center;
+
+  @include breakpoints.mq("sp") {
+    margin-top: 42px;
+  }
+}
+
+/////////////
 /* News */
+/////////////
+.news {
+}
 
+.news__inner {
+}
+
+.news__heading {
+}
+
+.news__cards {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  margin-top: 64px;
+
+  @include breakpoints.mq("sp") {
+    gap: 27px;
+    margin-top: 46px;
+  }
+}
+
+.news__card {
+}
+
+.news-card {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  gap: 40px;
+  max-width: 1040px;
+  margin: 0 auto;
+  padding-bottom: 24px; // 疑似要素の為のスペース空ける
+
+  @include breakpoints.mq("sp") {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    max-width: 400px;
+    padding-bottom: calc(28px - 2px); // ピクセルパーフェクトの為
+  }
+
+  // カード下にある下線
+  &::after {
+    position: absolute;
+    content: "";
+    bottom: 0;
+    background-color: color.$color-card-line;
+    width: 100%;
+    height: 1px;
+  }
+}
+
+.news-card__image {
+  width: 260px;
+  flex-shrink: 0;
+
+  img {
+    transition: transform 0.3s;
+  }
+
+  &:hover {
+    img {
+      transform: scale(1.1);
+    }
+  }
+
+  @include breakpoints.mq("sp") {
+    width: 100%;
+  }
+}
+
+.news-card__texts {
+  padding-right: 4px;
+}
+
+.news-card__date {
+  font-size: 14px;
+  height: 24px;
+}
+
+.news-card__title {
+  margin-top: 16px;
+  font-size: 18px;
+  font-weight: 600;
+
+  @include breakpoints.mq("sp") {
+    font-size: 16px;
+    margin-top: 10px;
+  }
+}
+
+.news-card__description {
+  margin-top: 10px;
+  color: color.$color-font-gray-2;
+  font-size: 14px;
+
+  @include breakpoints.mq("sp") {
+    margin-top: 14px;
+  }
+}
+
+.news__button {
+  margin-top: 44px;
+  text-align: center;
+
+  @include breakpoints.mq("sp") {
+    margin-top: 42px;
+  }
+}
+
+/////////////
 /* Motto */
+/////////////
 
+/////////////
 /* Contact */
+/////////////
 
+/////////////
 /* フッター */
+/////////////

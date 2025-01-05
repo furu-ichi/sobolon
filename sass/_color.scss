@@ -1,16 +1,26 @@
-// メインカラー
+/* メインカラー */
 $color-main: #3ea1d1;
 
-// 文字色
+/* 文字色 */
 $color-font-black: var(--333333, #333);
 $color-font-white: var(--ffffff, #fff);
 $color-font-gray-1: #989898;
 $color-font-gray-2: #888;
 $color-font-blue: var(--3-ea-1-d-1, #3ea1d1);
 
-// 背景色
+/* 背景色 */
 $color-bg-main: var(--ffffff, #fff);
 $color-bg-white: #fff;
+$color-bg-header: rgba(255, 255, 255, 0.8);
 
-// 見出し下部の線
+/* 見出し下部の線 */
 $color-line-blue: var(--3-ea-1-d-1, #3ea1d1);
+
+/* ボタンの枠線 */
+$color-border-blue: var(--3-ea-1-d-1, #3ea1d1);
+
+/* ボタンホバー時の背景色 */
+$color-button-bg: var(--3-ea-1-d-1, #3ea1d1);
+
+/* Newsカードの下線 */
+$color-card-line: #e0e0e0;

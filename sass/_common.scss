@@ -3,7 +3,9 @@
 
 /* PC、SP非表示用 */
 .hidden-pc {
-  display: none;
+  @include breakpoints.mq("pc") {
+    display: none;
+  }
 }
 .hidden-sp {
   @include breakpoints.mq("sp") {
@@ -13,21 +15,25 @@
 
 /* セクション間のpadding */
 .inter-section {
-  padding-bottom: 160px;
+  padding-top: 80px;
+  padding-bottom: 80px;
 
   @include breakpoints.mq("sp") {
-    padding-bottom: 96px;
+    padding-top: calc(48px - 1px); // ピクセルパーフェクトの為
+    padding-bottom: 48px;
   }
 }
 
 /* 共通インナー */
+$pc-inner: 40px;
+$sp-inner: 15px;
 .inner {
-  padding-right: 40px;
-  padding-left: 40px;
+  padding-right: $pc-inner;
+  padding-left: $pc-inner;
 
   @include breakpoints.mq("sp") {
-    padding-right: 15px;
-    padding-left: 15px;
+    padding-right: $sp-inner;
+    padding-left: $sp-inner;
   }
 }
 
@@ -40,6 +46,11 @@
   line-height: 1;
   text-align: center;
 
+  @include breakpoints.mq("sp") {
+    padding-bottom: 28px; // 疑似要素分のスペースを空ける
+    font-size: 30px;
+  }
+
   // 見出し下の下線
   &::after {
     content: "";
@@ -50,5 +61,25 @@
     left: 50%;
     transform: translateX(-50%);
     bottom: 0;
+  }
+}
+
+/* ボタン */
+.button {
+  display: inline-block;
+  padding: calc(12px - 1px) calc(4px - 1px);
+  text-align: center;
+  width: calc(150px + 3px * 2);
+  height: calc(26px + 11px * 2);
+  border: 1px solid color.$color-border-blue;
+  color: color.$color-font-blue;
+  font-size: 14px;
+  letter-spacing: 0.02px;
+
+  transition: color 0.3s, background-color 0.3s;
+
+  &:hover {
+    color: color.$color-font-white;
+    background-color: color.$color-button-bg;
   }
 }
