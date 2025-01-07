@@ -12,15 +12,23 @@ $color-font-blue: var(--3-ea-1-d-1, #3ea1d1);
 $color-bg-main: var(--ffffff, #fff);
 $color-bg-white: #fff;
 $color-bg-header: rgba(255, 255, 255, 0.8);
+$color-bg-blue: var(--3-ea-1-d-1, #3ea1d1);
 
 /* 見出し下部の線 */
 $color-line-blue: var(--3-ea-1-d-1, #3ea1d1);
 
 /* ボタンの枠線 */
 $color-border-blue: var(--3-ea-1-d-1, #3ea1d1);
+$color-border-blue-deep: var(--3-ea-1-d-1, #235e7c);
 
-/* ボタンホバー時の背景色 */
+/* ボタンの背景色 */
 $color-button-bg: var(--3-ea-1-d-1, #3ea1d1);
 
 /* Newsカードの下線 */
 $color-card-line: #e0e0e0;
+
+/* 必須の＊ */
+$color-require: #e7728e;
+
+/* ラジオボタンのボーダー */
+$color-radio-border: #fff;

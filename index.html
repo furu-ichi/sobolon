@@ -50,7 +50,7 @@
             <a href="#news" class="header__nav">News</a>
             <a href="#contact" class="header__nav">Contact</a>
           </nav>
-          <button class="header__icon">
+          <button id="js-header-icon" class="header__icon">
             <div class="header__icon-bar"></div>
             <div class="header__icon-bar"></div>
             <div class="header__icon-bar"></div>
@@ -58,6 +58,19 @@
         </div>
       </div>
     </header>
+
+    <!--------------------->
+    <!-- ドロワーメニュー -->
+    <!--------------------->
+    <div id="js-drawer" class="drawer">
+      <nav class="drawer__nav-list">
+        <a href="#concept" class="drawer__nav">Concept</a>
+        <a href="#feature" class="drawer__nav">Feature</a>
+        <a href="#products" class="drawer__nav">Products</a>
+        <a href="#news" class="drawer__nav">News</a>
+        <a href="#contact" class="drawer__nav">Contact</a>
+      </nav>
+    </div>
 
     <!--------------------->
     <!-- ファーストビュー -->
@@ -86,7 +99,7 @@
     <!------------->
     <section id="concept" class="concept inter-section">
       <div class="concept__inner inner">
-        <h2 class="concept__heading">
+        <h2 class="concept__heading js-in-view fade-in-up">
           <div class="heading">Concept</div>
         </h2>
         <div class="concept__content">
@@ -110,7 +123,7 @@
     <!------------->
     <section id="feature" class="feature inter-section">
       <div class="feature__inner inner">
-        <h2 class="feature__heading">
+        <h2 class="feature__heading js-in-view fade-in-up">
           <div class="heading">Feature</div>
         </h2>
         <div class="feature__cards">
@@ -180,7 +193,7 @@
     <!-------------->
     <section id="products" class="products inter-section">
       <div class="products__inner inner">
-        <h2 class="products__heading">
+        <h2 class="products__heading js-in-view fade-in-up">
           <div class="heading">Products</div>
         </h2>
         <div class="products__cards">
@@ -232,7 +245,7 @@
     <!---------->
     <section id="news" class="news inter-section">
       <div class="news__inner inner">
-        <h2 class="news__heading">
+        <h2 class="news__heading js-in-view fade-in-up">
           <div class="heading">News</div>
         </h2>
         <div class="news__cards">
@@ -274,9 +287,8 @@
               <time datetime="" class="news-card__date">2020年1月20日</time>
               <p class="news-card__title">sobolonの矛盾</p>
               <p class="news-card__description">
-                こんにちは！“可愛い”で
-                地球を守る！マイクロプラスチックアクセサリー【 sobolon
-                】のリーダーひなこです！sobolonを知らない…
+                こんにちは！“可愛い”で地球を守る！マイクロプラスチックアクセサリー【
+                sobolon 】のリーダーひなこです！sobolonを知らない…
               </p>
             </div>
           </a>
@@ -290,14 +302,177 @@
     <!----------->
     <!-- Motto -->
     <!----------->
+    <section id="motto" class="motto inter-section">
+      <div class="motto__inner inner">
+        <div class="motto__content">
+          <div class="motto__texts">
+            <p class="motto__text-1">
+              合言葉は、<br />「 “可愛い” で 地球を守る！」
+            </p>
+            <p class="motto__text-2">
+              深刻化している環境問題に対して、否定や制限、禁止といった強制的な方法ではなく、明るく幸せな未来を目指して、「可愛い」
+              「楽しい」の力を信じて、愛につながる選択を世の中に増やしていきます。
+            </p>
+          </div>
+          <div class="motto__image">
+            <img src="./img/motto.png" alt="モットーのイメージ画像" />
+          </div>
+        </div>
+      </div>
+    </section>
 
     <!------------->
     <!-- Contact -->
     <!------------->
+    <section id="contact" class="contact">
+      <div class="contact__inner">
+        <h2 class="contact__heading js-in-view fade-in-up">
+          <div class="heading">Contact</div>
+        </h2>
+        <p class="contact__attention"><span>＊</span>は入力必須項目です</p>
+        <form action="" class="contact__form">
+          <div class="contact__fields">
+            <!-- お名前 -->
+            <div class="contact__field form-field">
+              <div class="form-field__head">
+                <label for="input-name" class="form-field__label">お名前</label>
+                <span class="form-field__require">＊</span>
+              </div>
+              <div class="form-field__item">
+                <input
+                  class="form-field__text"
+                  type="text"
+                  name="input-name"
+                  id="input-name"
+                />
+              </div>
+            </div>
+            <!-- メールアドレス -->
+            <div class="contact__field form-field">
+              <div class="form-field__head">
+                <label for="input-email" class="form-field__label"
+                  >メールアドレス</label
+                >
+                <span class="form-field__require">＊</span>
+              </div>
+              <div class="form-field__item">
+                <input
+                  class="form-field__text"
+                  type="email"
+                  name="input-email"
+                  id="input-email"
+                />
+              </div>
+            </div>
+            <!-- 法人/個人の選択 -->
+            <div class="contact__field form-field">
+              <div class="form-field__head">
+                <div class="form-field__label">法人/個人の選択</div>
+                <span class="form-field__require">＊</span>
+              </div>
+              <div class="form-field__item">
+                <div class="form-field__radios">
+                  <label class="form-field__radio form-radio">
+                    <input
+                      class="form-radio__input"
+                      type="radio"
+                      name="input-customer"
+                      checked
+                    />
+                    <span class="form-radio__text">法人</span>
+                  </label>
+                  <label class="form-field__radio form-radio">
+                    <input
+                      class="form-radio__input"
+                      type="radio"
+                      name="input-customer"
+                    />
+                    <span class="form-radio__text">個人</span>
+                  </label>
+                </div>
+              </div>
+            </div>
+            <!-- お問い合わせ内容 -->
+            <div class="contact__field form-field">
+              <div class="form-field__head">
+                <label for="input-message" class="form-field__label"
+                  >お問い合わせ内容</label
+                >
+                <span class="form-field__require">＊</span>
+              </div>
+              <div class="form-field__item">
+                <textarea
+                  name=""
+                  id="input-message"
+                  class="form-field__textarea"
+                  cols="30"
+                  rows="10"
+                ></textarea>
+              </div>
+            </div>
+          </div>
+          <!-- プライバシーポリシー -->
+          <div class="contact__privacy">
+            <label class="form-checkbox">
+              <input
+                type="checkbox"
+                name="input-privacy"
+                class="form-checkbox__input"
+              />
+              <span class="form-checkbox__text"
+                ><a href="" target="_blank">プライバシーポリシー</a
+                >に同意します。</span
+              >
+            </label>
+          </div>
+          <!-- 送信ボタン -->
+          <div class="contact__button">
+            <button type="submit" class="button">送信</button>
+          </div>
+        </form>
+      </div>
+    </section>
 
     <!------------->
     <!-- フッター -->
     <!------------->
+    <footer class="footer">
+      <div class="footer__inner inner">
+        <div class="footer__content">
+          <div class="footer__logo">
+            <a href="#"><img src="./img/footer-logo.png" alt="sobolon" /></a>
+          </div>
+          <div class="footer__links">
+            <a href="" class="footer__link">プライバシーポリシー</a>
+            <a href="" class="footer__link">特定商取引法に基づく表記</a>
+          </div>
+          <div class="footer__sns">
+            <a href="https://x.com/home" target="_blank" class="footer__icon"
+              ><img src="./img/footer-x.png" alt="エックス"
+            /></a>
+            <a
+              href="https://www.instagram.com/"
+              target="_blank"
+              class="footer__icon"
+              ><img src="./img/footer-instagram.png" alt="インスタグラム"
+            /></a>
+            <a
+              href="https://www.line.me/ja/"
+              target="_blank"
+              class="footer__icon"
+              ><img src="./img/footer-line.png" alt="ライン"
+            /></a>
+          </div>
+          <div class="footer__reference">
+            icon by <a target="_blank" href="https://icons8.com">Icons8</a>
+          </div>
+
+          <small class="footer__copyright"
+            >© 2020 sobolon All rights reserved</small
+          >
+        </div>
+      </div>
+    </footer>
 
     <!-- JQuery読み込み -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>

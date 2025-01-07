@@ -1,6 +1,11 @@
 @use "breakpoints";
 @use "color";
 
+/* 改行用 */
+.inline-block {
+  display: inline-block;
+}
+
 /* PC、SP非表示用 */
 .hidden-pc {
   @include breakpoints.mq("pc") {
@@ -19,8 +24,10 @@
   padding-bottom: 80px;
 
   @include breakpoints.mq("sp") {
-    padding-top: calc(48px - 1px); // ピクセルパーフェクトの為
-    padding-bottom: 48px;
+    // padding-top: calc(48px - 1px); // ピクセルパーフェクトの為
+    // padding-bottom: 48px;
+    padding-top: calc(58px - 1px); // ピクセルパーフェクトの為
+    padding-bottom: 38px;
   }
 }
 
@@ -72,14 +79,17 @@ $sp-inner: 15px;
   width: calc(150px + 3px * 2);
   height: calc(26px + 11px * 2);
   border: 1px solid color.$color-border-blue;
+  background-color: color.$color-bg-white;
   color: color.$color-font-blue;
   font-size: 14px;
   letter-spacing: 0.02px;
 
   transition: color 0.3s, background-color 0.3s;
 
-  &:hover {
+  &:hover,
+  &:focus {
     color: color.$color-font-white;
     background-color: color.$color-button-bg;
+    outline: none;
   }
 }
