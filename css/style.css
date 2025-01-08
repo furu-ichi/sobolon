@@ -52,6 +52,7 @@
 
 /* 見出し */
 .heading {
+  display: block;
   position: relative;
   padding-bottom: 24px;
   font-size: 40px;
@@ -282,8 +283,14 @@ body.is-fixed {
 }
 
 .drawer__nav {
+  display: none;
   color: var(--ffffff, #fff);
   font-size: 18px;
+}
+@media screen and not (min-width: 768px) {
+  .drawer__nav {
+    display: block;
+  }
 }
 
 /* ファーストビュー */
@@ -347,7 +354,7 @@ body.is-fixed {
 }
 
 .fv__text-1 {
-  font-size: 26px;
+  font-size: clamp(1.5rem, 0.773rem + 3.64vw, 1.625rem);
   font-weight: 600;
 }
 
@@ -390,6 +397,7 @@ body.is-fixed {
     max-width: 345px;
   }
 }
+
 .concept__texts {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -410,7 +418,7 @@ body.is-fixed {
 }
 
 .concept__text-1 {
-  font-size: 20px;
+  font-size: clamp(1.125rem, 0.398rem + 3.64vw, 1.25rem);
   font-weight: 600;
 }
 @media screen and (min-width: 376px) and (max-width: 767px) {
@@ -784,6 +792,7 @@ body.is-fixed {
     max-width: 345px;
   }
 }
+
 /* Contact */
 .contact {
   margin-top: 80px;
@@ -1025,6 +1034,7 @@ body.is-fixed {
 }
 
 .form-checkbox__text {
+  font-size: clamp(0.938rem, 0.574rem + 1.82vw, 1rem);
   position: relative;
   padding-left: 30px;
 }
@@ -1085,6 +1095,10 @@ body.is-fixed {
   text-align: center;
 }
 
+.footer__logo {
+  -webkit-transition: opacity 0.3s;
+  transition: opacity 0.3s;
+}
 .footer__logo:hover {
   opacity: 0.6;
 }
@@ -1118,6 +1132,8 @@ body.is-fixed {
 
 .footer__link {
   font-size: 12px;
+  -webkit-transition: opacity 0.3s;
+  transition: opacity 0.3s;
 }
 .footer__link:hover {
   opacity: 0.6;
@@ -1143,6 +1159,10 @@ body.is-fixed {
   }
 }
 
+.footer__icon {
+  -webkit-transition: opacity 0.3s;
+  transition: opacity 0.3s;
+}
 .footer__icon:hover {
   opacity: 0.6;
 }
@@ -1156,6 +1176,11 @@ body.is-fixed {
 }
 .footer__reference a {
   text-decoration: underline;
+  -webkit-transition: opacity 0.3s;
+  transition: opacity 0.3s;
+}
+.footer__reference a:hover {
+  opacity: 0.6;
 }
 
 .footer__copyright {

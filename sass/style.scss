@@ -38,9 +38,6 @@ body {
   }
 }
 
-.header__inner {
-}
-
 .header__content {
   display: flex;
   flex-direction: row;
@@ -166,8 +163,13 @@ body {
 }
 
 .drawer__nav {
+  display: none; // PC表示時のタブキー操作が反応しないようにする為
   color: color.$color-font-white;
   font-size: 18px;
+
+  @include breakpoints.mq("sp") {
+    display: block;
+  }
 }
 
 /////////////////////
@@ -179,9 +181,6 @@ body {
   @include breakpoints.mq("sp") {
     padding-bottom: 38px;
   }
-}
-
-.fv__inner {
 }
 
 .fv__content {
@@ -245,7 +244,12 @@ body {
 }
 
 .fv__text-1 {
-  font-size: 26px;
+  // font-size: 26px;
+  font-size: clamp(
+    1.5rem,
+    0.773rem + 3.64vw,
+    1.625rem
+  ); // 最小24px、最大26px（画面幅320px～375px）画面幅320px時のレスポンシブ対応
   font-weight: 600;
 }
 
@@ -256,14 +260,6 @@ body {
 /////////////
 /* Concept */
 /////////////
-.concept {
-}
-
-.concept__inner {
-}
-
-.concept__heading {
-}
 
 .concept__content {
   // PCの場合は横並び
@@ -294,9 +290,6 @@ body {
     width: auto;
     max-width: 345px;
   }
-
-  img {
-  }
 }
 
 .concept__texts {
@@ -311,7 +304,11 @@ body {
 }
 
 .concept__text-1 {
-  font-size: 20px;
+  font-size: clamp(
+    1.125rem,
+    0.398rem + 3.64vw,
+    1.25rem
+  ); // 最小18px、最大20px（画面幅320px～375px）画面幅320px時のレスポンシブ対応
   font-weight: 600;
 
   @include breakpoints.mq("sp-tab") {
@@ -319,20 +316,9 @@ body {
   }
 }
 
-.concept__text-2 {
-}
-
 /////////////
 /* Feature */
 /////////////
-.feature {
-}
-
-.feature__inner {
-}
-
-.feature__heading {
-}
 
 .feature__cards {
   display: flex;
@@ -384,11 +370,6 @@ body {
 /////////////
 /* Question */
 /////////////
-.question {
-}
-
-.question__inner {
-}
 
 .question__content {
   position: relative;
@@ -396,9 +377,14 @@ body {
 
 .question__image {
   img {
-    filter: brightness(
-      85%
-    ); // カンプと比べて画像の上の文字が見にくい為、暗くして調整
+    // カンプと比べて画像の上の文字が見にくい為、暗くして調整
+    filter: brightness(85%);
+
+    // 画面幅1920px時のレスポンシブ対応
+    // object-fit: cover;
+    // object-position: center;
+    // height: 450px;
+    // width: 100%;
 
     @include breakpoints.mq("sp") {
       // 横幅は一定。縦にはみ出した部分は見切れるようにする
@@ -454,14 +440,6 @@ body {
 /////////////
 /* Products */
 /////////////
-.products {
-}
-
-.products__inner {
-}
-
-.products__heading {
-}
 
 .products__cards {
   display: flex;
@@ -480,9 +458,6 @@ body {
     align-items: center;
     margin-top: 46px;
   }
-}
-
-.products__card {
 }
 
 .products-card {
@@ -532,15 +507,6 @@ body {
 /////////////
 /* News */
 /////////////
-.news {
-}
-
-.news__inner {
-}
-
-.news__heading {
-}
-
 .news__cards {
   display: flex;
   flex-direction: column;
@@ -551,9 +517,6 @@ body {
     gap: 27px;
     margin-top: 46px;
   }
-}
-
-.news__card {
 }
 
 .news-card {
@@ -645,12 +608,6 @@ body {
 /////////////
 /* Motto */
 /////////////
-.motto {
-}
-
-.motto__inner {
-}
-
 .motto__content {
   display: flex;
   flex-direction: row;
@@ -665,9 +622,6 @@ body {
     flex-direction: column-reverse;
     gap: calc(32px + 3px); // ピクセルパーフェクトの為
   }
-}
-
-.motto__texts {
 }
 
 .motto__text-1 {
@@ -706,9 +660,6 @@ body {
     width: auto;
     max-width: 345px;
   }
-
-  img {
-  }
 }
 
 /////////////
@@ -725,9 +676,6 @@ body {
     padding-top: 56px;
     padding-bottom: 56px;
   }
-}
-
-.contact__inner {
 }
 
 .contact__heading {
@@ -769,9 +717,6 @@ body {
   @include breakpoints.mq("sp") {
     width: auto;
   }
-}
-
-.contact__field {
 }
 
 .form-field {
@@ -863,10 +808,6 @@ body {
   flex-direction: row;
   gap: 0;
 }
-.form-field__radio {
-}
-.form-radio {
-}
 .form-radio__input {
   // デフォルトのラジオボタン非表示
   width: 1px;
@@ -920,8 +861,6 @@ body {
     margin-top: 28px;
   }
 }
-.form-checkbox {
-}
 .form-checkbox__input {
   // デフォルトのチェックボックス非表示
   width: 1px;
@@ -940,6 +879,11 @@ body {
   opacity: 1;
 }
 .form-checkbox__text {
+  font-size: clamp(
+    0.938rem,
+    0.574rem + 1.82vw,
+    1rem
+  ); // 最小15px、最大16px（画面幅320px～375px）画面幅320px時のレスポンシブ対応
   position: relative;
   padding-left: 30px;
   a {
@@ -995,14 +939,13 @@ body {
   }
 }
 
-.footer__inner {
-}
-
 .footer__content {
   text-align: center;
 }
 
 .footer__logo {
+  transition: opacity 0.3s;
+
   &:hover {
     opacity: 0.6;
   }
@@ -1027,6 +970,8 @@ body {
 
 .footer__link {
   font-size: 12px;
+  transition: opacity 0.3s;
+
   &:hover {
     opacity: 0.6;
   }
@@ -1045,6 +990,8 @@ body {
 }
 
 .footer__icon {
+  transition: opacity 0.3s;
+
   &:hover {
     opacity: 0.6;
   }
@@ -1059,6 +1006,11 @@ body {
   font-size: 12px;
   a {
     text-decoration: underline;
+    transition: opacity 0.3s;
+
+    &:hover {
+      opacity: 0.6;
+    }
   }
 }
 

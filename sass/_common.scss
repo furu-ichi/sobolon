@@ -46,6 +46,7 @@ $sp-inner: 15px;
 
 /* 見出し */
 .heading {
+  display: block;
   position: relative;
   padding-bottom: 24px; // 疑似要素分のスペースを空ける
   font-size: 40px;

@@ -21,22 +21,40 @@
     />
 
     <!-- ファビコン -->
-    <!-- TODO -->
+    <link rel="icon" href="./favicon.ico" />
 
     <!-- OGP設定 -->
-    <!-- TODO -->
+    <meta property="og:title" content="sobolon" />
+    <meta property="og:type" content="website" />
+    <!-- TODO サブドメインにあげたら書く -->
+    <!-- <meta property="og:url" content="TODO" /> -->
+    <!-- TODO サブドメインにあげたら書く -->
+    <!-- <meta property="og:image" content="TODO" /> -->
+    <meta property="og:site_name" content="sobolon" />
+    <meta
+      property="og:description"
+      content="“可愛い”で地球を守る！海洋マイクロプラスチックを素材とした ハンドメイドアクセサリー「sobolon」"
+    />
 
     <!-- X（旧Twitter）カード設定 -->
-    <!-- TODO -->
+    <meta name="twitter:card" content="summary" />
+    <!-- <meta name="twitter:site" content="(2)Twitterのユーザー名" /> -->
+    <meta name="twitter:title" content="sobolon" />
+    <meta
+      name="twitter:description"
+      content="“可愛い”で地球を守る！海洋マイクロプラスチックを素材とした ハンドメイドアクセサリー「sobolon」"
+    />
+    <!-- TODO サブドメインにあげたら書く -->
+    <!-- <meta name="twitter:image" content="TODO" /> -->
 
     <!-- スタイルシートの読み込み -->
     <link rel="stylesheet" href="./css/reset.css" />
     <link rel="stylesheet" href="./css/style.css" />
   </head>
   <body>
-    <!-------------->
+    <!--==========-->
     <!-- ヘッダー -->
-    <!-------------->
+    <!--==========-->
     <header class="header">
       <div class="header__inner inner">
         <div class="header__content">
@@ -51,17 +69,17 @@
             <a href="#contact" class="header__nav">Contact</a>
           </nav>
           <button id="js-header-icon" class="header__icon">
-            <div class="header__icon-bar"></div>
-            <div class="header__icon-bar"></div>
-            <div class="header__icon-bar"></div>
+            <span class="header__icon-bar"></span>
+            <span class="header__icon-bar"></span>
+            <span class="header__icon-bar"></span>
           </button>
         </div>
       </div>
     </header>
 
-    <!--------------------->
+    <!--=================-->
     <!-- ドロワーメニュー -->
-    <!--------------------->
+    <!--=================-->
     <div id="js-drawer" class="drawer">
       <nav class="drawer__nav-list">
         <a href="#concept" class="drawer__nav">Concept</a>
@@ -72,9 +90,9 @@
       </nav>
     </div>
 
-    <!--------------------->
+    <!--=================-->
     <!-- ファーストビュー -->
-    <!--------------------->
+    <!--=================-->
     <div class="fv">
       <div class="fv__inner inner">
         <div class="fv__content">
@@ -94,13 +112,13 @@
       </div>
     </div>
 
-    <!------------->
+    <!--=========-->
     <!-- Concept -->
-    <!------------->
+    <!--=========-->
     <section id="concept" class="concept inter-section">
       <div class="concept__inner inner">
         <h2 class="concept__heading js-in-view fade-in-up">
-          <div class="heading">Concept</div>
+          <span class="heading">Concept</span>
         </h2>
         <div class="concept__content">
           <div class="concept__image">
@@ -118,13 +136,13 @@
       </div>
     </section>
 
-    <!------------->
+    <!--=========-->
     <!-- Feature -->
-    <!------------->
+    <!--=========-->
     <section id="feature" class="feature inter-section">
       <div class="feature__inner inner">
         <h2 class="feature__heading js-in-view fade-in-up">
-          <div class="heading">Feature</div>
+          <span class="heading">Feature</span>
         </h2>
         <div class="feature__cards">
           <div class="feature__card feature-card">
@@ -162,9 +180,9 @@
       </div>
     </section>
 
-    <!-------------->
+    <!--==========-->
     <!-- Question -->
-    <!-------------->
+    <!--==========-->
     <section id="question" class="question inter-section">
       <div class="question__inner">
         <div class="question__content">
@@ -188,13 +206,13 @@
       </div>
     </section>
 
-    <!-------------->
+    <!--==========-->
     <!-- Products -->
-    <!-------------->
+    <!--==========-->
     <section id="products" class="products inter-section">
       <div class="products__inner inner">
         <h2 class="products__heading js-in-view fade-in-up">
-          <div class="heading">Products</div>
+          <span class="heading">Products</span>
         </h2>
         <div class="products__cards">
           <a href="" class="products__card products-card">
@@ -240,55 +258,58 @@
       </div>
     </section>
 
-    <!---------->
+    <!--======-->
     <!-- News -->
-    <!---------->
+    <!--======-->
     <section id="news" class="news inter-section">
       <div class="news__inner inner">
         <h2 class="news__heading js-in-view fade-in-up">
-          <div class="heading">News</div>
+          <span class="heading">News</span>
         </h2>
         <div class="news__cards">
           <a href="" class="news__card news-card">
             <div class="news-card__image">
-              <img src="./img/news-1.png" alt="" />
+              <img src="./img/news-1.png" alt="NEWS画像1つ目" />
             </div>
             <div class="news-card__texts">
-              <time datetime="" class="news-card__date">2020年2月4日</time>
+              <time datetime="2020-02-04" class="news-card__date"
+                >2020年2月4日</time
+              >
               <p class="news-card__title">
                 き業展終了！次回は2/11(火)フェスタ出店します。
               </p>
               <p class="news-card__description">
-                「き業展」2日目！大盛況に終わりました\(ˆoˆ)/来てくださったみなさん本当にありがとうございました！やっぱり、地元多治見での出店はみ…
+                「き業展」2日目！大盛況に終わりました\(&nbsp;ˆoˆ&nbsp;)/来てくださったみなさん本当にありがとうございました！やっぱり、地元多治見での出店はみ…
               </p>
             </div>
           </a>
           <a href="" class="news__card news-card">
             <div class="news-card__image">
-              <img src="./img/news-2.png" alt="" />
+              <img src="./img/news-2.png" alt="NEWS画像2つ目" />
             </div>
             <div class="news-card__texts">
-              <time datetime="" class="news-card__date">2020年1月20日</time>
+              <time datetime="2020-01-20" class="news-card__date"
+                >2020年1月20日</time
+              >
               <p class="news-card__title">
-                “可愛い” で
-                地球を守る！海洋マイクロプラスチックを使ったハンドメイドアクセサリー屋さん【sobolon】
+                “可愛い”&nbsp;で&nbsp;地球を守る！&nbsp;海洋マイクロプラスチックを使ったハンドメイドアクセサリー屋さん&nbsp;【sobolon】
               </p>
               <p class="news-card__description">
-                こんにちは！私は、「 “可愛い”
-                で地球を守る！」をテーマに、昨今、環境問題として話題になっている、マイクロプラスチックを使ったアクセサリー…
+                こんにちは！私は、「&nbsp;“可愛い”&nbsp;で地球を守る！」をテーマに、昨今、環境問題として話題になっている、マイクロプラスチックを使ったアクセサリー…
               </p>
             </div>
           </a>
           <a href="" class="news__card news-card">
             <div class="news-card__image">
-              <img src="./img/news-3.png" alt="" />
+              <img src="./img/news-3.png" alt="NEWS画像3つ目" />
             </div>
             <div class="news-card__texts">
-              <time datetime="" class="news-card__date">2020年1月20日</time>
+              <time datetime="2020-01-20" class="news-card__date"
+                >2020年1月20日</time
+              >
               <p class="news-card__title">sobolonの矛盾</p>
               <p class="news-card__description">
-                こんにちは！“可愛い”で地球を守る！マイクロプラスチックアクセサリー【
-                sobolon 】のリーダーひなこです！sobolonを知らない…
+                こんにちは！“可愛い”で&nbsp;地球を守る！マイクロプラスチックアクセサリー【&nbsp;sobolon&nbsp;】のリーダーひなこです！sobolonを知らない…
               </p>
             </div>
           </a>
@@ -299,9 +320,9 @@
       </div>
     </section>
 
-    <!----------->
+    <!--=======-->
     <!-- Motto -->
-    <!----------->
+    <!--=======-->
     <section id="motto" class="motto inter-section">
       <div class="motto__inner inner">
         <div class="motto__content">
@@ -310,8 +331,7 @@
               合言葉は、<br />「 “可愛い” で 地球を守る！」
             </p>
             <p class="motto__text-2">
-              深刻化している環境問題に対して、否定や制限、禁止といった強制的な方法ではなく、明るく幸せな未来を目指して、「可愛い」
-              「楽しい」の力を信じて、愛につながる選択を世の中に増やしていきます。
+              深刻化している環境問題に対して、否定や制限、禁止といった強制的な方法ではなく、明るく幸せな未来を目指して、「可愛い」&nbsp;「楽しい」の力を信じて、愛につながる選択を世の中に増やしていきます。
             </p>
           </div>
           <div class="motto__image">
@@ -321,13 +341,13 @@
       </div>
     </section>
 
-    <!------------->
+    <!--=========-->
     <!-- Contact -->
-    <!------------->
+    <!--=========-->
     <section id="contact" class="contact">
       <div class="contact__inner">
         <h2 class="contact__heading js-in-view fade-in-up">
-          <div class="heading">Contact</div>
+          <span class="heading">Contact</span>
         </h2>
         <p class="contact__attention"><span>＊</span>は入力必須項目です</p>
         <form action="" class="contact__form">
@@ -402,7 +422,7 @@
               </div>
               <div class="form-field__item">
                 <textarea
-                  name=""
+                  name="input-message"
                   id="input-message"
                   class="form-field__textarea"
                   cols="30"
@@ -433,9 +453,9 @@
       </div>
     </section>
 
-    <!------------->
+    <!--==========-->
     <!-- フッター -->
-    <!------------->
+    <!--==========-->
     <footer class="footer">
       <div class="footer__inner inner">
         <div class="footer__content">
@@ -443,8 +463,12 @@
             <a href="#"><img src="./img/footer-logo.png" alt="sobolon" /></a>
           </div>
           <div class="footer__links">
-            <a href="" class="footer__link">プライバシーポリシー</a>
-            <a href="" class="footer__link">特定商取引法に基づく表記</a>
+            <a href="" target="_blank" class="footer__link"
+              >プライバシーポリシー</a
+            >
+            <a href="" target="_blank" class="footer__link"
+              >特定商取引法に基づく表記</a
+            >
           </div>
           <div class="footer__sns">
             <a href="https://x.com/home" target="_blank" class="footer__icon"
@@ -468,7 +492,7 @@
           </div>
 
           <small class="footer__copyright"
-            >© 2020 sobolon All rights reserved</small
+            >&copy; 2020 sobolon All rights reserved</small
           >
         </div>
       </div>
